@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title>Reaction Time</title>
+
+        <link rel="stylesheet" href="./jquery.mobile/jquery.mobile-1.4.5.min.css"/>
+        <script src="./jquery.mobile/jquery-1.11.1.min.js"></script> 
+         <!-- <script src="./cordova.js"></script>  -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="./jquery.mobile/jquery.mobile-1.4.5.min.js"></script> 
+
+    </head>
+    <body>  
+            <!-- // room_ID
+            // leader_ID
+            // search_status(0or1)
+             -->
+        <div data-role="page" id="mainPage">
+                <div data-role="header">
+                        <p style="text-align: right" id="header1">
+                          
+                            <a href="" data-role="button" data-icon="edit" data-iconpos="notext" data-inline="true" ></a>  
+                        </p>
+                </div>
+                <div data-role="content" style="margin-top: 50%;margin-bottom: 50%">
+                    <p style="text-align: center">
+                            <a href="#room_dialog" id="create_room"  data-transition="pop" data-role="button" data-icon="plus" data-iconpos="notext" data-inline="true" style="margin-right:40%"></a>
+                                
+                            <a href="#" id="search_room" data-role="button" data-icon="search" data-iconpos="notext" data-inline="true" 
+                            ></a><br>
+                            방만들기&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주변방탐색  
+                    </p>
+                </div>
+                <div >
+                    <input type="text" name="room_id"  placeholder=" 복사한 참여코드를 붙여넣기하여 입장해주세요." > 
+                    <button >입장</button>
+                </div>
+        </div>
+
+        <div id="room_dialog" data-role="page" data-dialog="true" data-close-btn="right" >
+
+                <div data-role="header" data-theme="b">
+                <h1>방 만 들 기</h1>
+                </div>
+        
+                <div role="main" class="ui-content">
+                    <form action="/main/room" method="post">
+                        <div id="nickname"></div>
+                    인원제한 : <input type="text" name="maxCount" placeholder="최대 50인">
+                    게임횟수 : <input type="text" name="playCount" placeholder="최대 5판"> 
+                    승리조건 : <input type="text" name="winNum" placeholder="선착순 ? 명">
+                    주변검색 허용 : 
+                   
+                        <label>
+                            <input type="checkbox" name="search_status">
+                            주변인에게 방을 노출시킵니다.
+                        </label>
+                    
+                    
+                    <p style="text-align: center"><strong>&lt;&nbsp;&nbsp;아이콘&nbsp;&nbsp;아이콘&nbsp;&nbsp;아이콘&nbsp;&nbsp;&gt;</strong></p>
+
+                    <input type="submit" value="만들기">
+                    <input type="button" value="취소">
+                  </form>
+                </div>
+            </div>
+
+        <script>
+                var socket =io();
+                
+                // $('form').submit(function(){
+                //     socket.emit('chat message', $('#m').val());
+                //     $('#m').val('');
+                //     return false;
+                // });
+
+                socket.on("nickname", function(nickname) {
+                  console.log("default nickname: ", nickname);
+                  var data= `<input type="hidden" name="nickname" value="${nickname}">`;
+                  $('#header1').prepend(nickname);
+                  $('#nickname').append(data);
+                });
+        </script>
+    </body>
+</html>
+
+
+

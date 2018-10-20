@@ -1,0 +1,7 @@
+create table user(
+user_id int(11) not null auto_increment,
+device_id varchar(100),
+nickname varchar(100) not null,
+playtime int(255) default 0,
+score int(255) default 0,
+primary key(user_id));

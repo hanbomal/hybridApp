@@ -1,0 +1,10 @@
+create table room(
+room_id int(11) not null auto_increment,
+leader_id varchar(100) not null,
+search_status varchar(100),
+maxCount int(50),
+playCount int(50),
+winNum int(50),
+primary key(room_id));
+
+

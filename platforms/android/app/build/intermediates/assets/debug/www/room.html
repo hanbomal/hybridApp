@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title>Reaction Time</title>
+
+        <link rel="stylesheet" href="./jquery.mobile/jquery.mobile-1.4.5.min.css"/>
+        <script src="./jquery.mobile/jquery-1.11.1.min.js"></script> 
+         <!-- <script src="./cordova.js"></script>  -->
+<!--        <script src="/socket.io/socket.io.js"></script>-->
+        <script src="./jquery.mobile/jquery.mobile-1.4.5.min.js"></script> 
+
+    </head>
+    <body>  
+
+        <div data-role="page" id="mainPage">
+                <div data-role="header">
+                        <p style="text-align: right;margin: 0">
+                            <a href="" data-role="button" data-icon="gear" data-iconpos="notext" data-inline="true" ></a>  
+                            <a href="" data-role="button" data-icon="user" data-iconpos="notext" data-inline="true" ></a><br>
+                            방설정 닉네임<br>
+                        </p>
+                </div>
+                <div data-role="content" style="margin-top: 30%;margin-bottom: 20%">
+                    <table data-role="table" class="ui-responsive table-stroke" data-mode=relow>
+                     <thead>
+                       <tr>
+                         <th>Nickname</th>
+                         <th style="text-align: center">record</th>
+                         <th style="text-align: center">ready</th>
+                       
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr>
+                         <th>gon</th>
+                         <td style="text-align: center">212 ms</td>
+                         <td style="text-align: center">O</td>
+                         <td style="text-align: center">
+                             <a href="" data-role="button" data-icon="star" data-iconpos="notext" data-inline="true" style="margin: 0"></a>
+                         </td>
+                       </tr>
+                       <tr>
+                         <td>hong</td>
+                         <td style="text-align: center">321 ms</td>
+                         <td style="text-align: center">X</td>
+                         <td style="text-align: center">
+                         <button data-role="none">강퇴</button></td>
+                       </tr>
+                       <tr>
+                         <td>cha</td>
+                         <td style="text-align: center">293ms</td>
+                         <td style="text-align: center">O</td>
+                         <td style="text-align: center">
+                         <button data-role="none">강퇴</button></td>
+                       </tr>
+                       <tr>
+                         <td>cha</td>
+                         <td style="text-align: center">293ms</td>
+                         <td style="text-align: center">O</td>
+                         <td style="text-align: center">
+                         <button data-role="none">강퇴</button></td>
+                       </tr>
+                       <tr>
+                         <td>cha</td>
+                         <td style="text-align: center">293ms</td>
+                         <td style="text-align: center">O</td>
+                         <td style="text-align: center">
+                         <button data-role="none">강퇴</button></td>
+                       </tr>
+                     </tbody>
+                   </table>
+                 
+                    <div data-role="pagination" >
+                       <p style="text-align: center">
+                        <strong>&lt; 1 2 3 4 5 &gt;</strong>
+                        </p>
+                    </div>
+                    
+                    참여인원: &nbsp;5 / 50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    준비 덜 된 인원: &nbsp;1
+                </div>
+                
+                
+                <button >준비하기</button>
+                <div  data-role="content" style="padding: 10px">
+                   &nbsp;&nbsp;
+                    <input type="text" disabled placeholder=" E03BADB411B55E2E" 
+                    data-role="none" style="width: 70%;">
+                    <button type="submit" style="width: 55px; display: inline;padding: 5px;">복사</button><br>
+                     &nbsp;&nbsp;참여코드를 복사하여 친구에게 알려주세요.
+                </div>
+                
+                
+        </div>
+
+      
+            <!-- <script>
+                var socket =io();
+                socket.on("roomData", function(data) {
+                  console.log(data);
+                });
+            </script>
+            -->
+    </body>
+</html>
+
+
+
